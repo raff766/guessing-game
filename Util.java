@@ -1,8 +1,12 @@
-package com.company;
+package sample;
+
+import java.util.Random;
+import java.util.Scanner;
 
 public class Util {
     public static int randomInt(int min, int max) {
-        return (int)(Math.random() * (max - min + 1) + min);
+        Random rnd = new Random();
+        return rnd.nextInt(max - min + 1) + min;
     }
     public static void printIntArr(int[] arr, int max) {
         for (int i = 0; i < max; i++) {
@@ -16,5 +20,15 @@ public class Util {
             }
         }
         return false;
+    }
+    public static int getIntInput() {
+        while (true) {
+            try {
+                Scanner sc = new Scanner(System.in);
+                return sc.nextInt();
+            } catch (Exception e) {
+                System.out.println("Please enter a valid input.");
+            }
+        }
     }
 }
